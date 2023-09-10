@@ -1,0 +1,77 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Models\{{ class }};
+
+/**
+ * Class {{ class }}
+ * 
+ * @package App\Services
+ */
+
+class {{ class }}Service
+{
+    /**
+     * Paginate storage resource
+     * 
+     * @return \App\Models\{{ class }}
+     */
+
+    public function getAll()
+    {
+        return {{ class }}::paginate();
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * 
+     * @return \App\Models\{{ class }}
+     */
+
+    public function store($request)
+    {
+        return {{ class }}::create($request->all());
+    }
+
+    /**
+     * Display the specified resource.
+     * 
+     * @param  \App\Models\{{ class }}  $id
+     *
+     * @return \App\Models\{{ class }}
+     */
+
+    public function show($id)
+    {
+        return {{ class }}::findOrFail($id);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\{{ class }}  $id
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function update($request, $id)
+    {
+        ${{ class }} = {{ class }}::findOrFail($id);
+        ${{ class }}->update($request->all());
+        return ${{ class }};
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  \App\Models\{{ class }}  $id
+     *
+     */
+    public function destroy($id)
+    {
+        {{ class }}::findOrFail($id)->delete();
+    }
+}
