@@ -1,5 +1,6 @@
 {
     "name": "smart-php/laravel-api-service",
+    "version":"0.0.1",
     "description": "Create a new CRUD service class, controller, request and service interface for Laravel",
     "keywords": [
         "laravel",
